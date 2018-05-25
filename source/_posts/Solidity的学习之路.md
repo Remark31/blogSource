@@ -86,8 +86,9 @@ Person[] public people;
 - uint8(a)
 
 ### Storage与Memory
-> Storage 永久存储在区块链中的变量    
-> Memory 存储在内存中的变量
+
+- Storage 永久存储在区块链中的变量    
+- Memory 存储在内存中的变量
 
  - 状态变量（在函数之外声明的变量）默认为“存储”形式，并永久写入区块链；
  - 而在函数内部声明的变量是“内存”型的，它们函数调用结束后消失。
@@ -261,12 +262,12 @@ contract GetPaid is Ownable {
 
 
 
-> TIPS.     
-> 1. 不能有相同名称的修饰符和函数。
+- TIPS.     
+- 1. 不能有相同名称的修饰符和函数。
 
 ## 包的导入
 
-> 引入文件
+- 引入文件
 
 ```
 import "./someothercontract.sol";
@@ -290,7 +291,7 @@ struct Person {
 ## 接口与事件
 
 ### 事件
-> 事件 是合约和区块链通讯的一种机制。你的前端应用“监听”某些事件，并做出反应。
+- 事件 是合约和区块链通讯的一种机制。你的前端应用“监听”某些事件，并做出反应。
 
 
 - 事件创建
@@ -382,10 +383,10 @@ contract MyContract {
 
 
 ### msg.sender
-> 指的是当前调用者（或智能合约）的 address。
+- 指的是当前调用者（或智能合约）的 address。
 
 ### Require
-> 使得函数在执行过程中，当不满足某些条件时抛出错误，并停止执行
+- 使得函数在执行过程中，当不满足某些条件时抛出错误，并停止执行
 
 ```
 require(keccak256(_name) == keccak256("Vitalik"));
@@ -399,7 +400,7 @@ require(keccak256(_name) == keccak256("Vitalik"));
 ## 继承
 
 ### 继承
-> 与普通面向对象语言的继承一样
+- 与普通面向对象语言的继承一样
 
 ```
 ontract Doge {
@@ -416,7 +417,7 @@ contract BabyDoge is Doge {
 ```
 
 ### 多重继承
-> 使用多重继承的时候，你只需要用逗号 , 来隔开几个你想要继承的合约
+- 使用多重继承的时候，你只需要用逗号 , 来隔开几个你想要继承的合约
 
 ```
 contract SatoshiNakamoto is NickSzabo, HalFinney {
