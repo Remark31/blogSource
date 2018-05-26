@@ -5,6 +5,8 @@ tags: [区块链,智能合约,以太坊]
 toc: true
 ---
 
+> Solidity是EVM虚拟机的一种智能合约语言，本文的学习路线主要是参考 https://cryptozombies.io/ 的学习进行的总结回顾
+
 # 合约
 
 ## 基本结构与节本数据类型
