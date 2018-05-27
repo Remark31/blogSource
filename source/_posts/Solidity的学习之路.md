@@ -28,7 +28,7 @@ toc: true
 - weeks
 - years
 
-```
+```javascript
 uint lastUpdated;
 
 // 将‘上次更新时间’ 设置为 ‘现在’
@@ -50,7 +50,7 @@ function fiveMinutesHavePassed() public view returns (bool) {
 
 
 
-```
+```javascript
 // 生成一个0到100的随机数:
 uint randNonce = 0;
 uint random = uint(keccak256(now, msg.sender, randNonce)) % 100;
@@ -62,7 +62,7 @@ uint random2 = uint(keccak256(now, msg.sender, randNonce)) % 100;
 
 和普通代码编程的map并无区别，存储键值对
 
-```
+```javascript
 mapping (address => uint) public accountBalance;
 ```
 
@@ -79,7 +79,7 @@ mapping (address => uint) public accountBalance;
 ### 数组
 
 - 公共数组：Solidity 会自动创建 getter 方法
-```
+```javascript
 Person[] public people;
 ```
 
@@ -96,7 +96,7 @@ Person[] public people;
  - 而在函数内部声明的变量是“内存”型的，它们函数调用结束后消失。
 
 
-```
+```javascript
 contract SandwichFactory {
   struct Sandwich {
     string name;
@@ -137,7 +137,7 @@ contract SandwichFactory {
 - for 
 
 
-```
+```javascript
 function getEvens() pure external returns(uint[]) {
   uint[] memory evens = new uint[](5);
   // 在新数组中记录序列号
@@ -174,7 +174,7 @@ function getEvens() pure external returns(uint[]) {
 
 - 多返回值
 
-```
+```javascript
 function multipleReturns() internal returns(uint a, uint b, uint c) {
   return (1, 2, 3);
 }
@@ -197,7 +197,7 @@ function getLastReturnValue() external {
 
 - 结构体传参
 
-```
+```javascript
 function _doStuff(Zombie storage _zombie) internal {
   // do stuff with _zombie
 }
@@ -208,7 +208,7 @@ function _doStuff(Zombie storage _zombie) internal {
 
 - pure：不读取应用里的状态
 - view：只读取数据，不更改数据
-```
+```javascript
 function _generateRandomDna(string _str) private view returns (uint) {
         uint rand = uint(keccak256(_str));
         return rand % dnaModulus;
@@ -218,7 +218,7 @@ function _generateRandomDna(string _str) private view returns (uint) {
 - 可以带参数
 
 
-```
+```javascript
 // 存储用户年龄的映射
 mapping (uint => uint) public age;
 
@@ -239,7 +239,7 @@ function driveCar(uint _userId) public olderThan(16, _userId) {
 
 msg.value表示查看向合约中发送了多少以太的方法。
 
-```
+```javascript
 contract OnlineStore {
   function buySomething() external payable {
     // 检查以确定0.001以太发送出去来运行函数:
@@ -253,7 +253,7 @@ contract OnlineStore {
 - 提现
 
 this.balance 存储了现有的eth
-```
+```javascript
 contract GetPaid is Ownable {
   function withdraw() external onlyOwner {
     owner.transfer(this.balance);
@@ -271,7 +271,7 @@ contract GetPaid is Ownable {
 
 - 引入文件
 
-```
+```javascript
 import "./someothercontract.sol";
 
 contract newContract is SomeOtherContract {
@@ -283,7 +283,7 @@ contract newContract is SomeOtherContract {
 
 与普通的结构体并无区别
 
-```
+```javascript
 struct Person {
     uint age;
     string name;
@@ -300,7 +300,7 @@ struct Person {
     
 - 事件通知
 
-```
+```javascript
 pragma solidity ^0.4.19;
 
 contract ZombieFactory {
@@ -346,8 +346,8 @@ contract ZombieFactory {
 - 使用接口
 
 
-```
-假设原合约为：
+```javascript
+//假设原合约为：
 contract LuckyNumber {
   mapping(address => uint) numbers;
 
@@ -360,12 +360,12 @@ contract LuckyNumber {
   }
 }
 
-在新合约中定义接口为：
+//在新合约中定义接口为：
 contract NumberInterface {
   function getNum(address _myAddress) public view returns (uint);
 }
 
-在新合约中使用接口为：
+//在新合约中使用接口为：
 contract MyContract {
   address NumberInterfaceAddress = 0xab38...;
   // ^ 这是FavoriteNumber合约在以太坊上的地址
@@ -404,7 +404,7 @@ require(keccak256(_name) == keccak256("Vitalik"));
 ### 继承
 - 与普通面向对象语言的继承一样
 
-```
+```javascript
 ontract Doge {
   function catchphrase() public returns (string) {
     return "So Wow CryptoDoge";
@@ -421,7 +421,7 @@ contract BabyDoge is Doge {
 ### 多重继承
 - 使用多重继承的时候，你只需要用逗号 , 来隔开几个你想要继承的合约
 
-```
+```javascript
 contract SatoshiNakamoto is NickSzabo, HalFinney {
   // 啧啧啧，宇宙的奥秘泄露了
 }
@@ -436,7 +436,7 @@ contract SatoshiNakamoto is NickSzabo, HalFinney {
 
 ### Ownable 合约
 
-```
+```javascript
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
@@ -478,7 +478,7 @@ contract Ownable {
 - 函数修饰符：modifier onlyOwner()，用来修饰其它已有函数
     - 执行时先执行修饰符中的内容，到`_`部分后开始执行原有函数的内容
 
-```
+```javascript
 contract MyContract is Ownable {
   event LaughManiacally(string laughter);
 
@@ -492,7 +492,7 @@ contract MyContract is Ownable {
 
 ### ERC721 标准
 
-```
+```javascript
 contract ERC721 {
   event Transfer(address indexed _from, address indexed _to, uint256 _tokenId);
   event Approval(address indexed _owner, address indexed _approved, uint256 _tokenId);
@@ -507,7 +507,7 @@ contract ERC721 {
 
 ### safeMath
 
-```
+```javascript
 library SafeMath {
 
   function mul(uint256 a, uint256 b) internal pure returns (uint256) {
@@ -540,7 +540,7 @@ library SafeMath {
 ```
 
 
-```
+```javascript
 using SafeMath for uint256;
 
 uint256 a = 5;
@@ -553,7 +553,7 @@ uint256 c = a.mul(2); // 5 * 2 = 10
 ## Gas的节省套路
 - 如果一个 struct 中有多个 uint，则尽可能使用较小的 uint, Solidity 会将这些 uint 打包在一起，从而占用较少的存储空间
 
-```
+```javascript
 struct NormalStruct {
   uint a;
   uint b;
