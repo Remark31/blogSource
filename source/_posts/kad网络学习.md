@@ -5,7 +5,7 @@ tags: [区块链，以太坊，p2p网络]
 ---
 
 # 概述
-> 源自论文 《Kademlia: A peerto -peer information system based onthe XOR metric》 https://pdos.csail.mit.edu/~petar/papers/maymounkov-kademlia-lncs.pdf
+> 源自论文 《Kademlia: A peer-to-peer information system based onthe XOR metric》 https://pdos.csail.mit.edu/~petar/papers/maymounkov-kademlia-lncs.pdf
 
 Kademlia算法是一种通过分布式哈希表(DHT)技术实现的协议算法,Kad算法通过独特的以异或算法（XOR）为距离度量基础，建立了一种全新的DHT拓扑结构，相比于其他算法，大大提高了路由查询速度。
 
