@@ -88,3 +88,6 @@ func IDFromPublicKey(pk ic.PubKey) (ID, error) {
 ```
 
 其中，mh是libp2p自己的hash库 `mh "github.com/multiformats/go-multihash"`，其实就是单纯的将公钥的hash计算出作为libp2p的节点hash，是个简单易懂的策略，和以太坊的非常类似。
+
+
+
